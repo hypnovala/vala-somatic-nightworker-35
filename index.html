@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALA Somatic Reset™ — Nightworker Edition</title>
+  <meta name="description" content="A 35-minute nervous system reset for women who stay on for work. Luxury somatic education for nightlife professionals, entertainers, and creators." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fdf5f0;
+      --panel: #fff8f5;
+      --panel2: #faeee8;
+      --panel3: #f5e4dc;
+      --text: #3d1a14;
+      --muted: #7a4a42;
+      --soft: #b08070;
+      --accent: #8b2a22;
+      --rose: #c96070;
+      --blush: #f2d4d0;
+      --blush2: #fde8e5;
+      --cream: #fdf0eb;
+      --gold: #c9916a;
+      --line: rgba(139, 42, 34, 0.12);
+      --line2: rgba(139, 42, 34, 0.06);
+      --brock-bg: #fef0ee;
+      --brock-line: rgba(201, 96, 112, 0.22);
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 245, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 0.5px solid var(--line);
+      padding: 14px 32px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-tag {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--soft);
+      padding: 6px 14px;
+      border: 0.5px solid var(--line);
+      border-radius: 100px;
+    }
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      background: var(--accent);
+      color: #fff8f5;
+      padding: 9px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 48px 28px 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .hero-copy {
+      background: var(--panel);
+      border: 0.5px solid var(--line);
+      border-radius: var(--radius);
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 400;
+    }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.04;
+      color: var(--text);
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-lead {
+      font-size: 14px;
+      line-height: 1.82;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 56ch;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .htag {
+      font-size: 11px;
+      padding: 6px 14px;
+      border: 0.5px solid var(--line);
+      border-radius: 100px;
+      color: var(--muted);
+      background: var(--blush);
+      letter-spacing: 0.03em;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff8f5;
+      padding: 12px 26px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      border: 0.5px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 26px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: var(--blush2); transform: translateY(-1px); }
+
+    .hero-media {
+      background: var(--panel);
+      border: 0.5px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-img-slot {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex: 1;
+      min-height: 320px;
+      background: var(--blush);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-img-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .img-slot-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(61, 26, 20, 0.72);
+      color: #fff8f5;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .ph-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 24px;
+      text-align: center;
+      height: 100%;
+    }
+    .ph-play {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px dashed rgba(139, 42, 34, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ph-play svg { stroke: var(--accent); fill: none; }
+    .ph-lbl { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); }
+    .ph-desc { font-size: 12px; color: var(--muted); line-height: 1.55; max-width: 22ch; }
+    .ph-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .ph-mini {
+      background: var(--blush);
+      border: 1px dashed rgba(139, 42, 34, 0.2);
+      border-radius: var(--radius-sm);
+      min-height: 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* ── STATS ── */
+    .stats-strip {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px 24px;
+      display: flex;
+    }
+    .stat {
+      flex: 1;
+      background: var(--panel);
+      border: 0.5px solid var(--line);
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .stat:first-child { border-radius: 14px 0 0 14px; }
+    .stat:last-child { border-radius: 0 14px 14px 0; }
+    .stat + .stat { border-left: none; }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-l {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-top: 4px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px 36px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 8px;
+    }
+    .section-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+
+    /* ── SLIDES ── */
+    .slides { display: flex; flex-direction: column; gap: 14px; }
+
+    .slide {
+      background: var(--panel);
+      border: 0.5px solid var(--line);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .slide:hover { box-shadow: 0 4px 24px rgba(139, 42, 34, 0.07); }
+
+    .slide-body { padding: 26px 28px; }
+    .slide-num {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 8px;
+    }
+    .slide-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .dur {
+      font-size: 11px;
+      color: var(--soft);
+      margin-bottom: 16px;
+    }
+    .onscreen {
+      background: var(--blush);
+      border: 0.5px solid rgba(139, 42, 34, 0.14);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      margin-bottom: 10px;
+    }
+    .box-lbl {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 7px;
+    }
+    .onscreen p, .onscreen ul {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .onscreen ul li::before { content: "— "; color: var(--rose); }
+    .script-box {
+      background: var(--panel2);
+      border: 0.5px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+    }
+    .script-box p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.78;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .slide-media {
+      border-left: 0.5px solid var(--line);
+      overflow: hidden;
+    }
+    .slide-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .slide-ph {
+      height: 100%;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Brock slides */
+    .brock {
+      background: var(--brock-bg);
+      border-color: var(--brock-line);
+    }
+    .brock .slide-num { color: var(--rose); }
+    .brock .slide-title { color: var(--accent); }
+    .brock .onscreen { background: var(--blush2); border-color: rgba(201, 96, 112, 0.18); }
+    .brock .box-lbl { color: var(--rose); }
+    .brock .script-box { background: #fdf5f3; border-color: rgba(201, 96, 112, 0.14); }
+    .brock .dur { color: var(--rose); }
+    .brock .slide-media { border-color: var(--brock-line); }
+    .brock .slide-ph { background: var(--blush2); }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      padding: 0 28px;
+    }
+    .cta-inner {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 52px 44px;
+      text-align: center;
+    }
+    .vala-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .vpill {
+      background: rgba(255, 248, 245, 0.14);
+      border: 0.5px solid rgba(255, 248, 245, 0.28);
+      color: #fff8f5;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+    }
+    .cta-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 300;
+      color: #fff8f5;
+      line-height: 1.12;
+      margin-bottom: 12px;
+    }
+    .cta-p {
+      font-size: 14px;
+      color: rgba(255, 248, 245, 0.72);
+      line-height: 1.78;
+      max-width: 52ch;
+      margin: 0 auto 28px;
+      font-weight: 300;
+    }
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cta-btn-w {
+      background: #fff8f5;
+      color: var(--accent);
+      padding: 12px 26px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn-w:hover { opacity: 0.9; }
+    .cta-btn-t {
+      border: 0.5px solid rgba(255, 248, 245, 0.38);
+      color: #fff8f5;
+      padding: 12px 26px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn-t:hover { background: rgba(255, 248, 245, 0.1); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 11px;
+      color: var(--soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-top: 0.5px solid var(--line);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-copy { animation: fadeUp 0.6s ease both; }
+    .hero-media { animation: fadeUp 0.6s ease 0.1s both; }
+    .stats-strip { animation: fadeUp 0.6s ease 0.2s both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { min-height: 320px; }
+      .slide { grid-template-columns: 1fr; }
+      .slide-media { height: 200px; border-left: none; border-top: 0.5px solid var(--line); }
+      .stats-strip { flex-wrap: wrap; }
+      .stat { min-width: 50%; }
+      .stat:first-child { border-radius: 14px 0 0 0; }
+      .stat:nth-child(2) { border-radius: 0 14px 0 0; }
+      .stat:nth-child(3) { border-radius: 0 0 0 14px; border-left: 0.5px solid var(--line); border-top: none; }
+      .stat:last-child { border-radius: 0 0 14px 0; border-top: none; }
+      .nav-links .nav-tag:not(:last-child) { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 24px 16px 16px; }
+      .hero-copy { padding: 28px; }
+      .wrap, .section, .stats-strip, .cta-block { padding-left: 16px; padding-right: 16px; }
+      .nav { padding: 12px 16px; }
+      .cta-inner { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">VALA Somatic Reset<span>™</span></a>
+      <div class="nav-links">
+        <span class="nav-tag">Nightworker Edition</span>
+        <span class="nav-tag">35 min</span>
+        <a href="#membership" class="nav-cta">Join membership</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">VALA Somatic Reset™ &mdash; Nightworker Edition</span>
+      <h1 class="hero-h1">A nervous system reset<br>for women who stay<br><em>"on"</em> for work</h1>
+      <p class="hero-lead">If your job requires you to be seen, social, and on&mdash;this reset is for you. A 35-minute luxury somatic experience for nightlife professionals, entertainers, and high-stimulation women.</p>
+      <div class="hero-tags">
+        <span class="htag">Bottle girls &amp; cocktail servers</span>
+        <span class="htag">Entertainers &amp; performers</span>
+        <span class="htag">Club hosts &amp; nightlife staff</span>
+        <span class="htag">Creators &amp; models</span>
+      </div>
+      <div class="btn-row">
+        <a href="#slides" class="btn-primary">Start free reset</a>
+        <a href="#membership" class="btn-outline">Join VALA membership</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-img-slot">
+        <!-- HOLDER 01: Replace src with your narrator image URL -->
+        <img src="images/narrator-hero.jpg"
+             alt="VALA narrator — luxury bedroom, warm lighting"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="ph-inner" style="display:none;">
+          <div class="ph-play">
+            <svg width="13" height="13" viewBox="0 0 24 24" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <span class="ph-lbl">Holder 01 &mdash; Narrator hero video</span>
+          <span class="ph-desc">Luxury bedroom, warm lamp, silk robe after shift, heels on floor, soft gold tones</span>
+        </div>
+        <div class="img-slot-label">Slide 01 &mdash; Cover</div>
+      </div>
+      <div class="ph-mini-grid">
+        <div class="ph-mini">
+          <span class="ph-lbl">Holder 02</span>
+          <span class="ph-desc" style="font-size:11px;color:var(--muted);">Brock thumbnail</span>
+        </div>
+        <div class="ph-mini">
+          <span class="ph-lbl">Holder 03</span>
+          <span class="ph-desc" style="font-size:11px;color:var(--muted);">Post-shift moment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat"><div class="stat-n">35</div><div class="stat-l">Minutes</div></div>
+    <div class="stat"><div class="stat-n">11</div><div class="stat-l">Slides</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Brock Inserts</div></div>
+    <div class="stat"><div class="stat-n">$39</div><div class="stat-l">Per Month</div></div>
+  </div>
+
+  <!-- SLIDES -->
+  <section class="section" id="slides">
+    <div class="section-label">Course slides</div>
+    <h2 class="section-h2">Full 35-min slide deck &amp; teleprompter</h2>
+    <div class="slides">
+
+      <!-- SLIDE 01 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 01 &mdash; 0:30</div>
+          <div class="slide-title">VALA Somatic Reset™</div>
+          <div class="dur">Cover slide</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <p>A nervous system reset for women who stay "on" for work</p>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"If your job requires you to be seen, social, and 'on'&hellip; this reset is for you."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <!-- HOLDER 01: Your uploaded narrator image goes here -->
+          <img src="images/narrator-hero.jpg" alt="VALA narrator"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="slide-ph" style="display:none;">
+            <span class="ph-lbl">Holder 01</span>
+            <span class="ph-desc">Black lace lingerie, VA lettering, warm bedroom, cinematic gold tones</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 02 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 02 &mdash; 3:00</div>
+          <div class="slide-title">Your shift ends&hellip; but your body doesn't</div>
+          <div class="dur">The reality</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <p>Still alert. Still bracing. Still scanning.</p>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"You clock out&hellip; but your body is still working. Your chest is tight&hellip; your mind is racing&hellip; your body won't relax&hellip;"</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 02</span>
+            <span class="ph-desc">Woman in car after shift, gripping wheel, neon reflections, cinematic realism</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 03 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 03 &mdash; 3:00</div>
+          <div class="slide-title">You learned how to turn it on&hellip; not how to turn it off</div>
+          <div class="dur">What no one tells you</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Smile</li><li>Move</li><li>Talk</li><li>Hold attention</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"You're good at your job. But no one taught you how to come down, how to release, how to feel safe again. So your body stays 'on'&hellip; even when you're alone."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 03</span>
+            <span class="ph-desc">Split: confident nightlife woman vs same woman alone at home, contrast lighting</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- BROCK INSERT 01 -->
+      <article class="slide brock">
+        <div class="slide-body">
+          <div class="slide-num">Brock Insert 01 &mdash; 2:00</div>
+          <div class="slide-title">This is nervous system overload</div>
+          <div class="dur">Authority reframe</div>
+          <div class="onscreen">
+            <div class="box-lbl">Brock script</div>
+            <p>"This is nervous system overload. Not weakness. Your body adapted to your environment&hellip; Now we teach it how to come back."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 04</span>
+            <span class="ph-desc">Brock insert: coaching studio, warm tones, calm authority, direct to camera</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 04 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 04 &mdash; 3:00</div>
+          <div class="slide-title">Your body is talking</div>
+          <div class="dur">Body signals</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Tight jaw</li><li>Chest pressure</li><li>Shallow breath</li><li>Racing thoughts</li><li>Irritability</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"Your body remembers everything. Every interaction. Every look. Every moment you had to stay composed. Even when you act unbothered&hellip; your body is holding it."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 05</span>
+            <span class="ph-desc">Close-up of jaw, neck, shoulder tension, dim emotional lighting</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 05 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 05 &mdash; 4:00</div>
+          <div class="slide-title">This is why you feel weird after work</div>
+          <div class="dur">Post-shift anxiety</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Empty</li><li>Irritated</li><li>Overstimulated</li><li>Unable to sleep</li><li>Stuck scrolling</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"After high stimulation, your body crashes. That's not random. That's your nervous system decompressing."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 06</span>
+            <span class="ph-desc">Woman in bed, phone glow, late-night fatigue, screen light, cinematic</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 06 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 06 &mdash; 4:00</div>
+          <div class="slide-title">Do this after every shift</div>
+          <div class="dur">60-second reset</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Inhale slowly through your nose</li><li>Small second inhale</li><li>Long slow exhale through your mouth</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Guided script</div>
+            <p>"Sit still. Inhale slowly through your nose. Small second inhale. Long slow exhale. Repeat 3 times. Now ask: what am I feeling in my body?"</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 07</span>
+            <span class="ph-desc">Hands on chest and stomach, silk sheets, warm bedside lighting, calm breath</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- BROCK INSERT 02 -->
+      <article class="slide brock">
+        <div class="slide-body">
+          <div class="slide-num">Brock Insert 02 &mdash; 2:00</div>
+          <div class="slide-title">The body needs completion</div>
+          <div class="dur">Authority reframe</div>
+          <div class="onscreen">
+            <div class="box-lbl">Brock script</div>
+            <p>"Your body needs completion, not distraction. This is how you teach it safety again."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 08</span>
+            <span class="ph-desc">Brock portrait, warm somatic coaching styling, direct to camera</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 07 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 07 &mdash; 3:00</div>
+          <div class="slide-title">Not all energy is yours</div>
+          <div class="dur">Social energy</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <p>In nightlife environments, you absorb energy.</p>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"The room. The people. The pressure. Sometimes your anxiety&hellip; isn't even yours."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 09</span>
+            <span class="ph-desc">Blurred club crowd, center subject overwhelmed, motion blur, contrast lighting</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 08 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 08 &mdash; 4:00</div>
+          <div class="slide-title">3-Point Reset</div>
+          <div class="dur">Grounding method</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>See 3 things</li><li>Feel your feet</li><li>Relax your jaw</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"Name 3 things you see. Feel your feet on the ground. Let your jaw unclench. Slow your breath. You're teaching your body: I'm safe now."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 10</span>
+            <span class="ph-desc">Woman outside venue, grounded breath, night lights, calm posture</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 09 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 09 &mdash; 4:00</div>
+          <div class="slide-title">How to come down after work</div>
+          <div class="dur">Exit ritual</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Remove heels slowly</li><li>Change into something soft</li><li>Warm shower</li><li>No phone for 20 minutes</li><li>Breathe</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"Remove your heels slowly. Change into something soft. Take a warm shower. Avoid your phone for 20 minutes. Let your body come back to you."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 11</span>
+            <span class="ph-desc">Luxury apartment, removing heels, silk robe, warm decompression ritual</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- BROCK INSERT 03 -->
+      <article class="slide brock">
+        <div class="slide-body">
+          <div class="slide-num">Brock Insert 03 &mdash; 2:00</div>
+          <div class="slide-title">Recovery sustains success</div>
+          <div class="dur">Final authority reframe</div>
+          <div class="onscreen">
+            <div class="box-lbl">Brock script</div>
+            <p>"Recovery is the missing piece. Performance without recovery leads to burnout. This is how you sustain your life&hellip; and your success."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 12</span>
+            <span class="ph-desc">Brock speaking to camera, warm authority, coaching presence</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 10 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 10 &mdash; 4:00</div>
+          <div class="slide-title">You are VALA</div>
+          <div class="dur">Identity integration</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Valuable</li><li>Accepted</li><li>Loved</li><li>Approved</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"I am valuable beyond my appearance. I am accepted beyond performance. I am loved without effort. I approve of myself&hellip; even in stillness."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 13</span>
+            <span class="ph-desc">Confident woman in silk at mirror, golden light, grounded softness</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 11 -->
+      <article class="slide">
+        <div class="slide-body">
+          <div class="slide-num">Slide 11 &mdash; 2:00</div>
+          <div class="slide-title">You don't have to stay on</div>
+          <div class="dur">Integration close</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <p>You can be powerful and relaxed. You can be seen and still feel like yourself.</p>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Script</div>
+            <p>"You can move between performance&hellip; and presence. You can be seen&hellip; and still feel like yourself."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 14</span>
+            <span class="ph-desc">Peaceful final still, eyes closed, soft bedding, calm breathing</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- FINAL BROCK CTA -->
+      <article class="slide brock" id="membership">
+        <div class="slide-body">
+          <div class="slide-num">Final Brock CTA &mdash; 2:00</div>
+          <div class="slide-title">Continue your reset</div>
+          <div class="dur">Conversion close</div>
+          <div class="onscreen">
+            <div class="box-lbl">On screen</div>
+            <ul><li>Online coaching</li><li>Local Houston sessions</li><li>VALA membership</li><li>Guided reset programs</li></ul>
+          </div>
+          <div class="script-box">
+            <div class="box-lbl">Closing script</div>
+            <p>"If your job requires you to be seen, chosen, or constantly on&hellip; this work helps your body stay grounded through all of it. This is how you keep your success without losing yourself."</p>
+          </div>
+        </div>
+        <div class="slide-media">
+          <div class="slide-ph">
+            <span class="ph-lbl">Holder 15</span>
+            <span class="ph-desc">Brock CTA: refined coaching portrait, warm luxury consultation feel</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="cta-inner">
+      <div class="vala-pills">
+        <span class="vpill">Valuable</span>
+        <span class="vpill">Accepted</span>
+        <span class="vpill">Loved</span>
+        <span class="vpill">Approved</span>
+      </div>
+      <h2 class="cta-h">Begin the next step toward calm,<br>confidence, and embodied self-worth.</h2>
+      <p class="cta-p">Start with the free guide, experience the 35-minute reset, and join early access to the VALA Somatic Membership.</p>
+      <div class="cta-btns">
+        <a href="#" class="cta-btn-w">Get the free guide</a>
+        <a href="#" class="cta-btn-t">Join early access</a>
+        <a href="tel:3462191603" class="cta-btn-t">Book Brock &mdash; Houston</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    Brock John &nbsp;&middot;&nbsp; VALA Somatic Reset™ &nbsp;&middot;&nbsp; Houston, Texas &nbsp;&middot;&nbsp;
+    <a href="tel:3462191603">346-219-1603</a> &nbsp;&middot;&nbsp; Educational wellness experience
+  </footer>
+
+</body>
+</html>
