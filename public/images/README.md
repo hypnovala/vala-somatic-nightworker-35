@@ -14,3 +14,6 @@ Add image files to this folder using the exact filenames referenced in `app/page
 - vala-identity.jpg
 - integration.jpg
 - brock-cta.jpg
+
+
+Note: binary image files are intentionally not committed in this repository.
